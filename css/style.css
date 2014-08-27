@@ -2,7 +2,7 @@
 /*@import url("bootstrap-theme.css");*/
 
 body {
-  padding:50px 0px;
+  padding:0px 0px;
 /*  background: #3F3F3F;  */ /* gray */
   background: #E5F4DB;
   font-family: 'Actor', sans-serif; 
@@ -14,7 +14,8 @@ section .container, footer .container {
   /*background:white;*/
   background:white;  
   border-radius: 5px;
-  padding:50px;
+  padding:100px 50px;
+  font-size: 2vw;
 }
 
 .navbar {
@@ -58,25 +59,23 @@ nav li:active {
 .carousel-caption p  {
   font-size: 3vw;
 }
-section  {
-/*  background:#BBFFA2; */
+
+
+section h2 {
+  font-family: 'Cedarville Cursive', cursive;
+  margin-bottom:40px;
+  font-size: 4vw;
+  font-style:italic;
+  
 }
 
-#about {
-/*  background:rgb(255, 204, 111); */
-}
-
-section ,footer {
-  padding-top:100px;
-  padding-bottom:100px;
-  border-top: 1px solid white;
+.center-block {
+  float:none;
 }
 
 footer {
 /*  background:#8CE9FF;  */
 }
-
-
 
 footer div {
   margin:0px auto;
