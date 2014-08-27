@@ -1,0 +1,83 @@
+/*@import url("bootstrap.min.css");*/
+/*@import url("bootstrap-theme.css");*/
+
+body {
+  padding:50px 0px;
+/*  background: #3F3F3F;  */ /* gray */
+  background: #E5F4DB;
+  font-family: 'Actor', sans-serif; 
+  color: black;
+  position: relative;  /* needed for scrollspy.js */
+}
+
+section .container, footer .container {
+  /*background:white;*/
+  background:white;  
+  border-radius: 5px;
+  padding:50px;
+}
+
+.navbar {
+  opacity: 0.9;
+}
+
+.navbar-inner {
+/*  background-color: rgba(0, 0, 0, 0.20);*/
+}
+
+.slide-in {
+    top:-100px;
+}
+
+.navslide {
+  transition:top 3s ease-in-out;
+}
+
+nav li:active {
+  color:white;
+}
+
+#mycarousel .img-responsive {
+  margin:0px auto;
+}
+
+#mycarousel img {
+/*
+  -webkit-filter: sepia(1) blur(2px);
+  filter: sepia(1) blur(2px);
+
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+*/
+}
+
+.carousel-caption  h1 {
+  font-size: 8vw;
+}
+
+.carousel-caption p  {
+  font-size: 3vw;
+}
+section  {
+/*  background:#BBFFA2; */
+}
+
+#about {
+/*  background:rgb(255, 204, 111); */
+}
+
+section ,footer {
+  padding-top:100px;
+  padding-bottom:100px;
+  border-top: 1px solid white;
+}
+
+footer {
+/*  background:#8CE9FF;  */
+}
+
+
+
+footer div {
+  margin:0px auto;
+}
