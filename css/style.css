@@ -15,7 +15,7 @@ section .container, footer .container {
   background:white;  
   border-radius: 5px;
   padding:100px 50px;
-  font-size: 2vw;
+  font-size: 2.5em;
 }
 
 .navbar {
@@ -64,13 +64,53 @@ nav li:active {
 section h2 {
   font-family: 'Cedarville Cursive', cursive;
   margin-bottom:40px;
-  font-size: 4vw;
+  font-size: 2em;
   font-style:italic;
+}
+
   
+.tile {
+  width:300px;
+  height:282px;
+  border:1px solid black;
+  margin-top:5%;
+  margin-bottom:5%;
+  margin-left:1%;
+  margin-right:1%;
+  transition: background-position 0.5s ease 0s;
+  display:inline-block;
+}
+
+.tile:hover{
+  border:2px solid orange;
+}
+   
+.music {
+  background:url('../images/musicstitch2.jpg');
+  transition: background-position 0.5s ease 0s;
+}
+
+.tech {
+  background:url('../images/techstitch2.jpg');
+  transition: background-position 0.5s ease 0.5s;
+}
+
+.food {
+  background:url('../images/foodstitch2.jpg');
+  transition: background-position 0.5s ease 0.9s;
+}
+
+.tile.active {   
+  background-position: 0px 285px;
+}
+
+.center {
+  text-align:center;
 }
 
 .center-block {
   float:none;
+  margin: 0 auto;
 }
 
 footer {
