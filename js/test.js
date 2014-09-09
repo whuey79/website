@@ -25,13 +25,24 @@ $(function() {
 
 
 
+(function(){
+  var $nav = $('nav');
+  $nav.addClass('slide-in');
+  $nav.addClass('navslide');
+}());
 
-    var $nav = $('nav');
-    $nav.addClass('slide-in');
-    $nav.addClass('navslide');
-
+    
 $(function() {
     var $nav = $('nav');
     $nav.removeClass('slide-in');
-});
     
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 215) {
+            $(".tile").addClass("active");
+        } else {
+            $(".tile").removeClass("active");
+        }
+    });
+});

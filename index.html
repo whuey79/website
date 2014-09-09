@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
   </head>
@@ -48,14 +49,26 @@
 
     
     <section id="about">
+
       <div class='container'>
         <h2>About</h2>
+
         <div class="row">
-          <div class="col-md-10 center-block"><p>Hi there!  I'm Will Huey, an aspiring frontend engineer living in San Francisco.  I love good music, new technology, and awesome food.</p></div>
+          <div class="col-md-10 center-block">
+            <p>Hi there!  I'm Will Huey, an aspiring frontend engineer living in San Francisco.  I love good music, new technology, and awesome food.
+            </p>
+          </div>
         </div>
-        <br>
+        
+        <div class="row center center-block">
+          <div class="tile music"></div>
+          <div class="tile tech"></div>
+          <div class="tile food"></div>
+        </div>
+        
         <div class="row">
-          <div class="col-md-10 center-block"><p>Feel free to leave me a message if you'd like to chat.</p></div>
+          <div class="col-md-10 center-block"><p>Feel free to leave me a message below if you'd like to chat.</p>
+          </div>
         </div>
         
       </div>
@@ -69,14 +82,14 @@
           <div class="row">  
             <div class="form-group col-md-10 center-block">
               <label for="name">Name:</label>  
-              <input type="text" name="name" class="form-control" placeholder="Name">
+              <input type="text" name="name" class="form-control" placeholder="Name" required>
             </div>
           </div>
 
           <div class="row">            
             <div class="form-group col-md-10 center-block">
               <label for="email">E-mail:</label>
-              <input type="email" name="email" class="form-control" placeholder="Email">
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
             </div>
           </div>
           
@@ -108,11 +121,11 @@
       <div class="container">
 			Copyright © 2014 - Will Huey
       </div>
-    </footer>
-    
+    </footer> 
     
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/test.js"></script>
+        
   </body>
 </html>
