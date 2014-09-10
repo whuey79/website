@@ -29,6 +29,8 @@ $(function() {
   var $nav = $('nav');
   $nav.addClass('slide-in');
   $nav.addClass('navslide');
+  $('.carousel-caption').css('left','-2000px');
+  $('.fadein').hide();
 }());
 
     
@@ -45,4 +47,7 @@ $(function() {
             $(".tile").removeClass("active");
         }
     });
+
+    $('.carousel-caption').css('left','20%');     
+    $('.fadein').fadeIn();
 });

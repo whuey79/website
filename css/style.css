@@ -3,8 +3,8 @@
 
 body {
   padding:0px 0px;
-/*  background: #3F3F3F;  */ /* gray */
-  background: #E5F4DB;
+  background-color:#F8D186;   /* orange */
+/*  background: #E5F4DB; */ /* green */
   font-family: 'Actor', sans-serif; 
   color: black;
   position: relative;  /* needed for scrollspy.js */
@@ -34,6 +34,11 @@ section .container, footer .container {
   transition:top 3s ease-in-out;
 }
 
+.carousel-caption {
+  transition:left 3s ease 0s;
+  transition:opacity 3s ease 3s;
+}
+
 nav li:active {
   color:white;
 }
@@ -53,7 +58,13 @@ nav li:active {
 }
 
 .carousel-caption  h1 {
-  font-size: 8vw;
+  font-size: 7vw;
+  
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 25%;
 }
 
 .carousel-caption p  {
