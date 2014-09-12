@@ -43,9 +43,12 @@ footer .container-fluid {
   transition:top 3s ease-in-out;
 }
 
-.carousel-caption {
-  transition:left 3s ease 0s;
-  transition:opacity 3s ease 3s;
+.quote {
+  display:none;
+}
+
+.active-quote {
+  display:inline;
 }
 
 nav li:active {
