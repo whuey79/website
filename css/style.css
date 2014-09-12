@@ -4,18 +4,27 @@
 body {
   padding:0px 0px;
 /*  background-color:#F4DCB5; */  /* orange */
-  background: #E5F4DB;  /* green */
+/*  background: #E5F4DB; */ /* green */
+/*  background: url("../images/pat.png"); */
   font-family: 'Actor', sans-serif; 
   color: black;
   position: relative;  /* needed for scrollspy.js */
 }
 
-section .container, footer .container {
+section .container  {
   /*background:white;*/
   background:white;  
-  border-radius: 5px;
-  padding:100px 50px;
+  border-radius: 0px;
   font-size: 2.5em;
+  padding:10% 50px;
+}
+
+footer .container-fluid {
+  padding:100px 50px;
+  margin:0px auto;
+  background:#474747; 
+  color:white;
+  font-size: 2.0em;
 }
 
 .navbar {
@@ -59,7 +68,6 @@ nav li:active {
 
 .carousel-caption  h1 {
   font-size: 7vw;
-  
 }
 
 .carousel-caption {
@@ -138,10 +146,17 @@ section h2 {
   margin: 0 auto;
 }
 
+div.fixedImage {
+  height:600px;
+  background:url("../images/kaiju3.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 0% 75%;
+}
+
 footer {
 /*  background:#8CE9FF;  */
 }
 
-footer div {
-  margin:0px auto;
-}
+
