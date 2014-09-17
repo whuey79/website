@@ -1,3 +1,10 @@
+// hide navbar slide in if JS enabled
+(function(){
+  var $nav = $('nav');
+  $nav.addClass('slide-in');
+  $nav.addClass('navslide');
+}());
+
 // smooth scroll script + custom addons
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -23,16 +30,7 @@ $(function() {
   });
 });
 
-
-
-(function(){
-  var $nav = $('nav');
-  $nav.addClass('slide-in');
-  $nav.addClass('navslide');
-//  $('.carousel-caption').css('left','-2000px');
-}());
-
-    
+// init navbar slide-in and tile background changes
 $(function() {
     var $nav = $('nav');
     $nav.removeClass('slide-in');
@@ -43,9 +41,7 @@ $(function() {
         if (scroll >= 215) {
             $(".tile").addClass("active");
         } else {
-            $(".tile").removeClass("active");
+          //  $(".tile").removeClass("active");
         }
-    });
-
-//    $('.carousel-caption').animate( {left:'20%'},2000 );     
+    });  
 });
