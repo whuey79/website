@@ -10,40 +10,121 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
   </head>
-  <body id="home" data-spy="scroll">
-    <nav class ="navbar navbar-default navbar-fixed-top navbar-inner" role="navigation">   
-      <div class='container'>
-        <a href="#" class="navbar-brand">DinaAndWill.com</a>
-        
+  <body data-spy="scroll">
+
+
+<!--
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
         </button>
-        
-        <div class = "collapse navbar-collapse navHeaderCollapse">
-          <ul class = "nav navbar-nav navbar-right">
-            <li class="active"><a href="#home">Home
-              <i class="fa fa-home"></i></a></li>
-          </ul>
-        </div>       
-      </div>
-    </nav>   
-    
-    <section class="center-block">
+        <a href="#" class="navbar-brand">DinaAndWill.com</a>
+
+-->
+  <header>
+    <ul class = "nav nav-tabs active" role="tablist" data-tabs="tabs" id="nav">
+      <li  role="presentation">
+        <a href="#home" data-toggle="tab">
+          Home
+          <i class="fa fa-home"></i>
+        </a>
+      </li>
+
+      <li role="presentation"  id="m" >
+        <a href="#map" data-toggle="tab">Location
+          <i class="fa fa-map-marker"></i>
+        </a>
+      </li>
+      
+      <li role="presentation" >
+        <a href="#test2" data-toggle="tab">Test2
+          <i class="fa fa-map-marker"></i>
+        </a>
+      </li>
+    </ul>
+  </header> 
+
+  <div class='tab-content'>
+    <section id="home" class="center-block tab-pane active">
       <h2 class="save-text">Save the Date!</h2>
       <h2 class="save-date">Sept. 26, 2015</h2>
     </section>
 
-    <footer>
+    <section id="map" class="tab-pane">
+        <p class="addy">
+            <span><strong>Presidio Golf Course</strong></span><br>
+            <span>300 Finley Rd</span><br>
+            <span>San Francisco, CA 94129</span><br>
+            <span>(415) 561-4653</span><br>
+            <a href="https://www.google.com/maps/place/Presidio+Golf+Course/@37.7895005,-122.4556606,13z/data=!4m2!3m1!1s0x8085872178601d39:0x43b39a416a388f43" target="_blank">
+                Get Directions
+            </a>
+        </p>
 
+        <div id="map-canvas"></div>
+    </section>
+
+    <section id="test2" class="center-block tab-pane">
+      <h2 class="save-text">TEST2!</h2>
+      <h2 class="save-date">Sept. 26, 2015</h2>
+    </section>
+  </div>
+
+    <footer>
       <div class="container-fluid filler">
 			Copyright © 2014 - Will Huey
       </div>
     </footer> 
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>       
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  initialize();
+});
+        //google.maps.event.addDomListener( window, 'load', initialize);
+
+        function initialize() {
+
+            var platlong = new google.maps.LatLng(37.7908189,-122.460333);
+            var mapCanvas = document.getElementById('map-canvas');
+
+            var mapOptions = {
+                center: platlong,
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            var marker = new google.maps.Marker({
+               position: platlong,
+               map: map,
+               title: 'Presidio Golf Club',
+               popupurl: "https://www.google.com/maps/place/Presidio+Golf+Course/@37.7897718,-122.4612396,14z/data=!4m2!3m1!1s0x8085872178601d39:0x43b39a416a388f43"
+            });
+
+            var info = document.querySelectorAll(".addy")[0].innerHTML;
+
+            var infowindow = new google.maps.InfoWindow({
+               content: info
+            });
+
+            google.maps.event.addDomListener( window, 'resize', function() {
+                map.setCenter(platlong);
+            });
+
+            google.maps.event.addDomListener( marker, 'click', function() {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+    
+
   </body>
 </html>
