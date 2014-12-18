@@ -20,8 +20,7 @@ header ul li:nth-child(1) {
 }
 
 .tab-content section {
-  height: 800px;
-
+  min-height: 800px;
 }
 
 
@@ -35,7 +34,6 @@ header ul li:nth-child(1) {
     margin-left:50px;
     margin-top:20px;
     margin-bottom:20px;
-    overflow: hidden;
 }
 
 section h2 {
@@ -67,4 +65,5 @@ footer {
     padding-top:20px;
     color: #777;
     font-size: 18px;
+    height:100px;
 }

@@ -1,47 +1,33 @@
-// hide navbar slide in if JS enabled
-(function(){
-  var $nav = $('nav');
-  $nav.addClass('slide-in');
-  $nav.addClass('navslide');
-}());
+function initialize() {
+    var platlong = new google.maps.LatLng(37.7908189,-122.460333);
+    var mapCanvas = document.getElementById('map-canvas');
 
-// smooth scroll script + custom addons
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      
-      if (target.length) {
-        $('html,body').stop().animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        
-      // set active nav menu
-      var $par = $(this).closest('li');
-      $par.siblings().removeClass('active');
-      $par.addClass('active');
-      
-      // close mobile nav on click
-      $par.closest('div').removeClass('in');
-      return false;
-      }
-    }
-  });
-});
+    var mapOptions = {
+        center: platlong,
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 
-// init navbar slide-in and tile background changes
-$(function() {
-    var $nav = $('nav');
-    $nav.removeClass('slide-in');
-    
-    $(window).scroll(function() {    
-        var scroll = $(window).scrollTop();
+    var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        if (scroll >= 215) {
-            $(".tile").addClass("active");
-        } else {
-          //  $(".tile").removeClass("active");
-        }
-    });  
-});
+    var marker = new google.maps.Marker({
+       position: platlong,
+       map: map,
+       title: 'Presidio Golf Club',
+       popupurl: "https://www.google.com/maps/place/Presidio+Golf+Course/@37.7897718,-122.4612396,14z/data=!4m2!3m1!1s0x8085872178601d39:0x43b39a416a388f43"
+    });
+
+    var info = document.querySelectorAll(".addy")[0].innerHTML;
+
+    var infowindow = new google.maps.InfoWindow({
+       content: info
+    });
+
+    google.maps.event.addDomListener( window, 'resize', function() {
+        map.setCenter(platlong);
+    });
+
+    google.maps.event.addDomListener( marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
+}   
